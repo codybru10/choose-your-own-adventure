@@ -1,29 +1,32 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, OnInit } from '@angular/core';
 import { User } from '../user.model';
 import { Scenarios } from '../scenarios.model';
 import { Router } from '@angular/router';
+import { ScenariosService } from '../scenarios.service';
 
 @Component({
   selector: 'app-welcome',
   templateUrl: './welcome.component.html',
-  styleUrls: ['./welcome.component.css']
+  styleUrls: ['./welcome.component.css'],
+  providers: [ScenariosService]
 })
-export class WelcomeComponent {
+export class WelcomeComponent implements OnInit {
   @Output() newUserSender = new EventEmitter();
 
   user = null;
 
-  constructor(private router: Router){}
+  constructor(private router: Router, private scenariosService: ScenariosService){}
 
   submitForm(name: string, age: number, gender: string) {
     this.user = new User(name, age, gender);
     console.log(this.user.name);
   }
 
-  scenarios: Scenarios[] = [
-    new Scenarios("You get to the theater and notify the theater staff that someone is going to attempt to assassinate Lincoln but risk them not taking you seriously.", 1),
-    new Scenarios("You get into the theater and try to stop Booth yourself but you run the risk of not stopping the assassination from happening.", 2)
-  ];
+  scenarios: Scenarios[];
+
+  ngOnInit(){
+    this.scenarios = this.scenariosService.getScenarios(); 
+  }
 
   goToDetailPage(clickedScenario: Scenarios) {
     console.log(clickedScenario);
