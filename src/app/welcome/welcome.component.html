@@ -7,4 +7,6 @@
   <input #newGender>
 </div>
 
-<button (click)="submitForm(newName.value, newAge.value, newGender.value); newName.value=''; newAge.value=''; newGender.value='';">Start Game</button>
+<button (click)="submitForm(newName.value, newAge.value, newGender.value); newName.value=''; newAge.value=''; newGender.value='';">Add User</button>
+
+<h1 *ngIf="user">Welcome {{user.name}}</h1>

@@ -9,8 +9,10 @@ import { User } from '../user.model';
 export class WelcomeComponent {
   @Output() newUserSender = new EventEmitter();
 
+  user = null;
+
   submitForm(name: string, age: number, gender: string) {
-    var newUserToAdd: User = new User(name, age, gender);
-    this.newUserSender.emit(newUserToAdd);
+    this.user = new User(name, age, gender);
+    console.log(this.user.name);
   }
 }

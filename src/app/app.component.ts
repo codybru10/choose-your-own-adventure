@@ -8,11 +8,12 @@ import { User } from './user.model';
 })
 export class AppComponent {
   title = 'Welcome to Time Travel Adventures';
+  user = "Cody";
 
-  masterUserList: User[] = [
-  ];
+  // masterUserList: User[] = [
+  // ];
 
   addUser(user){
-    this.masterUserList.push(user);
+    this.user = user;
   }
 }
