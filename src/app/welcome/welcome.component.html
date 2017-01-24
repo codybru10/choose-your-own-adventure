@@ -1,0 +1,10 @@
+<div class="form-group">
+  <label>Name:</label>
+  <input #newName>
+  <label>Age:</label>
+  <input #newAge>
+  <label>Gender:</label>
+  <input #newGender>
+</div>
+
+<button (click)="submitForm(newName.value, newAge.value, newGender.value); newName.value=''; newAge.value=''; newGender.value='';">Start Game</button>
