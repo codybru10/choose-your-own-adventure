@@ -3,21 +3,21 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { PresentDayComponent } from './present-day.component';
+import { ScenarioDetailComponent } from './scenario-detail.component';
 
-describe('PresentDayComponent', () => {
-  let component: PresentDayComponent;
-  let fixture: ComponentFixture<PresentDayComponent>;
+describe('ScenarioDetailComponent', () => {
+  let component: ScenarioDetailComponent;
+  let fixture: ComponentFixture<ScenarioDetailComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PresentDayComponent ]
+      declarations: [ ScenarioDetailComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PresentDayComponent);
+    fixture = TestBed.createComponent(ScenarioDetailComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

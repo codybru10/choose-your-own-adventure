@@ -5,13 +5,15 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { routing } from './app.routing';
-import { PresentDayComponent } from './present-day/present-day.component';
+import { ScenarioDetailComponent } from './scenario-detail/scenario-detail.component';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomeComponent,
-    PresentDayComponent
+    ScenarioDetailComponent
   ],
   imports: [
     BrowserModule,

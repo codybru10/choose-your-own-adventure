@@ -8,5 +8,15 @@
 </div>
 
 <button (click)="submitForm(newName.value, newAge.value, newGender.value); newName.value=''; newAge.value=''; newGender.value='';">Add User</button>
+<div *ngIf="user">
+  <h1>Welcome {{user.name}}</h1>
+  <p>
+    It’s the year 3000 and a time traveling machine has been invented. You work for the United States CIA and have been selected to complete a special mission. You must stop Abraham Lincoln from being assassinated by John Wilkes Booth.
+  </p>
+  <br>
 
-<h1 *ngIf="user">Welcome {{user.name}}</h1>
+  <div *ngFor="let scenario of scenarios">
+    <h6 (click)="goToDetailPage(scenario)"><em>{{scenario.description}}</em></h6> 
+  </div>
+
+</div>
