@@ -19,13 +19,13 @@ export class WelcomeComponent implements OnInit {
 
   submitForm(name: string, age: number, gender: string) {
     this.user = new User(name, age, gender);
-    console.log(this.user.name);
+    console.log(this.user);
   }
 
   scenarios: Scenarios[];
 
   ngOnInit(){
-    this.scenarios = this.scenariosService.getScenarios(); 
+    this.scenarios = this.scenariosService.getScenarios();
   }
 
   goToDetailPage(clickedScenario: Scenarios) {
